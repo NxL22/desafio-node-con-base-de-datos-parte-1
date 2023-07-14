@@ -1,0 +1,44 @@
+body {
+  background: #224afda1;
+}
+
+.form {
+  padding: 15px;
+  background: #0d47a1;
+  color: white;
+  padding: 20px;
+  border-radius: 51px;
+  box-shadow: 0 3px 3px rgb(0, 0, 0.9);
+}
+
+.card-body {
+  background: #e1e2e1;
+}
+
+#creado {
+  background: #002b55;
+}
+
+.card {
+  background: transparent !important;
+  border: none !important;
+}
+
+.fa-solid {
+  color: red;
+}
+
+i {
+  cursor: pointer;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h2 {
+  color: #05478a;
+  font-size: 3em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
