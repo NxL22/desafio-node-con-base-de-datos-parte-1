@@ -20,10 +20,10 @@ const getPosts = async () => {
 
 const agregarPost = async (req, res) => {
 
-    const { titulo, imgSrc, descripcion, likes } = req.body;
+    const { titulo, img, descripcion, likes } = req.body;
 
-    const query = `INSERT INTO posts (titulo, imgSrc, descripcion, likes) VALUES ($1, $2, $3, $4) RETURNING *`;
-    const values = [titulo, imgSrc, descripcion, likes];
+    const query = `INSERT INTO posts (titulo, img, descripcion, likes) VALUES ($1, $2, $3, $4) RETURNING *`;
+    const values = [titulo, img, descripcion, likes];
 
     const result = await pool.query(query, values);
 

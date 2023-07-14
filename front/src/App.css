@@ -1,29 +1,41 @@
 body {
-  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  background: linear-gradient(135deg, #054044, #2751aa);
   font-family: Arial, sans-serif;
   color: #06012bda;
 }
 
 .form {
   padding: 15px;
-  background: #5b86e5;
-  color: #fff;
+  background: #305fc5;
+  color: #f0eded;
   border-radius: 20px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px rgba(0, 2, 0, 0.9);
 }
 
 .card-body {
-  background: #f0ecec;
+  background: #e9e8e8;
   border-radius: 15px ;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(5, 0, 0, 0.9);
 }
 
 #creado {
-  background: #3d5afe;
+  background: #2d44c2e7;
 }
 
 .card {
   background: transparent;
   border: none;
+  margin-bottom: 30px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  border-radius: 15px;
 }
 
 .fa-solid {
