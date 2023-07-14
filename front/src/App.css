@@ -1,31 +1,33 @@
 body {
-  background: #224afda1;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  font-family: Arial, sans-serif;
+  color: #06012bda;
 }
 
 .form {
   padding: 15px;
-  background: #0d47a1;
-  color: white;
-  padding: 20px;
-  border-radius: 51px;
-  box-shadow: 0 3px 3px rgb(0, 0, 0.9);
+  background: #5b86e5;
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .card-body {
-  background: #e1e2e1;
+  background: #f0ecec;
+  border-radius: 15px ;
 }
 
 #creado {
-  background: #002b55;
+  background: #3d5afe;
 }
 
 .card {
-  background: transparent !important;
-  border: none !important;
+  background: transparent;
+  border: none;
 }
 
 .fa-solid {
-  color: red;
+  color: #ff1744;
 }
 
 i {
@@ -33,12 +35,12 @@ i {
 }
 
 .App {
-  font-family: sans-serif;
   text-align: center;
 }
 
 h2 {
-  color: #05478a;
+  color: #3d5afe;
   font-size: 3em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+  font-weight: bold;
 }

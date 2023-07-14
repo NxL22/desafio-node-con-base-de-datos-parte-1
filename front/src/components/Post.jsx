@@ -20,7 +20,7 @@ function Post({
                 }`}
               >Corazon</i>
               <span className="ms-1">{likes}</span>
-            </div>                                               // PONER ICONO
+            </div>                                               
             <i onClick={() => eliminarPost(id)} className="fa-solid fa-x">X</i>
           </div>
         </div>

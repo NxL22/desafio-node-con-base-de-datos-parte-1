@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 3000; // 
+const port = 3001; 
 const { getPosts, agregarPost } = require('./consultas')
 
 
@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '../front/public/index.html');
 });
 
+
+// Por aca hago que los post se vean en la web.
 app.get('/posts', async (req, res) => {
     try {
         const posts = await getPosts();
@@ -30,4 +32,19 @@ app.get('/posts', async (req, res) => {
         res.status(500).send('Error en el servidor');
     }
 });
+
+
+app.post('/posts', async (req, res) => {
+    try {
+        const posts = await agregarPost(req, res);
+        res.json(posts);
+    } catch (error) {
+        console.error('Error al obtener los posts:', error);
+        res.status(500).send('Error en el servidor');
+    }
+});
+
+
+
+
 

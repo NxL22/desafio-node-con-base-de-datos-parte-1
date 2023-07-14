@@ -1,6 +1,5 @@
 const { Pool } = require('pg')
-const express = require('express');
-const app = express();
+
 
 // Conexion a Postgres 
 const pool = new Pool({
@@ -12,32 +11,27 @@ const pool = new Pool({
 });
 
 
-// Ruta GET para mostrar la tabla posts
+// Ruta GET para mostrar la tabla posts, lo probe y da un Posts: [] (probado, esta ok)
 const getPosts = async () => {
     const result = await pool.query(`SELECT * FROM posts`);
     return result.rows;
 }
 
 
-const agregarPost = async () => {
-    try {
-        app.post('/posts', async (req, res) => {
-            const { titulo, imgSrc, descripcion, likes } = req.body;
+const agregarPost = async (req, res) => {
 
-            const query = `INSERT INTO posts (titulo, imgSrc, descripcion, likes) VALUES ($1, $2, $3, $4) RETURNING *`;
-            const values = [titulo, imgSrc, descripcion, likes];
+    const { titulo, imgSrc, descripcion, likes } = req.body;
 
-            const result = await pool.query(query, values);
+    const query = `INSERT INTO posts (titulo, imgSrc, descripcion, likes) VALUES ($1, $2, $3, $4) RETURNING *`;
+    const values = [titulo, imgSrc, descripcion, likes];
 
-            console.log('Nuevo registro insertado:', result.rows[0]);
-            res.status(201).json(result.rows[0]);
-        });
-    } catch (error) {
-        console.error('Error al agregar registro', error);
-    }
-}
+    const result = await pool.query(query, values);
 
-agregarPost();
+    console.log('Nuevo registro insertado:', result.rows[0]);
+    res.status(201).json(result.rows[0]);
+};
+
+
 
 
 
