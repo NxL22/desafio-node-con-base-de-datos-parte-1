@@ -31,11 +31,29 @@ const agregarPost = async (req, res) => {
     res.status(201).json(result.rows[0]);
 };
 
+// Ruta DELETE
+const eliminarPosts = async (id) => {
+    const result = await pool.query(`DELETE FROM posts WHERE id =$1`, [id]);
+    return result.rows;
+}
+
+
+//*PUT**
+// Incrementar los likes de un post
+const incrementarLikes = async (id) => {
+    const query = 'UPDATE posts SET likes = likes + 1 WHERE id = $1 RETURNING likes';
+    const result = await pool.query(query, [id]);
+    return result.rows[0].likes;
+};
+
+
 
 
 
 
 module.exports = {
     getPosts,
-    agregarPost
+    agregarPost,
+    eliminarPosts,
+    incrementarLikes
 }

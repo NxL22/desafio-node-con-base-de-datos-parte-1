@@ -9,7 +9,7 @@ const urlBaseServer = "http://localhost:3001"; // N° de servidor. Para hacer la
 
 function App() {
   const [titulo, setTitulo] = useState("");
-  const [imgSrc, setImgSRC] = useState("");
+  const [img, setImg] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [posts, setPosts] = useState([]);
 
@@ -19,7 +19,7 @@ function App() {
   };
 
   const agregarPost = async () => {
-    const post = { titulo, url: imgSrc, descripcion, likes:0 };
+    const post = { titulo, img, descripcion, likes:0 };
     await axios.post(urlBaseServer + "/posts", post);
     getPosts();
   };
@@ -40,12 +40,12 @@ function App() {
 
   return (
     <div className="App">
-      <h2 className="py-5 text-center">&#128248; LiKe Me &#128248;</h2>
+      <h2 className="py-5 text-center">&#128248; <big>Insta LiKe!</big> &#128248;</h2>
       <div className="row m-auto px-5">
         <div className="col-12 col-sm-4">
           <Form
             setTitulo={setTitulo}
-            setImgSRC={setImgSRC}
+            setImg={setImg}
             setDescripcion={setDescripcion}
             agregarPost={agregarPost}
           />
